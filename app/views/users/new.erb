@@ -1,0 +1,4 @@
+<h2>Create Account</h2>
+<form action='/users' method='post'>
+  <%= erb :"auth/_form", locals: { login: @login } %>
+</form>
