@@ -2,7 +2,7 @@
 get "/users" do
   @users = User.all
  
-  erb :"users/index"
+  redirect "/"
 end
  
 # show the form to create a new user
@@ -20,8 +20,9 @@ end
 # create a new user record (create)
 post "/users" do
   @user = User.new(params[:user])
- 
+
   if @user.save
+    session[:user_id] = @user.id
     redirect "/users"
   else
     erb :"users/new"

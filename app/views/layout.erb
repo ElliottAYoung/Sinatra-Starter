@@ -18,11 +18,17 @@
   <title></title>
 </head>
 <body>
-  <%if current_user%>
-    <a href="/logout">Logout</a>
+  <%if current_user %>
+    <div class="auth_button">
+      <a href="/logout">Logout</a>
+    </div>
   <%else%>
-    <a href="/login">Login</a>
-    <a href="/users/new">Create Account
+    <div class="auth_button">
+      <a href="/login">Login</a>
+    </div>
+    <div class="auth_button">
+      <a href="/users/new">Create Account</a>
+    </div>
   <%end%>
   <%= yield %>
 </body>
